@@ -1,0 +1,98 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./img/pudding-icon.png" />
+    <script src="script.js"></script>
+    <title>PuddingFest</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="./index.html">PuddingFest 🍮</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Content -->
+    <div class="jumbotron">
+      <h1 class="fw-bold pb-4">PuddingFest 🍮</h1>
+      <p>
+        An annual event showcasing <span>new tech</span> from companies all over
+        <span>Indonesia</span>.<br />
+        Brought to you by <span>PT Musang</span>. 🐿️
+      </p>
+      <p>
+        <a class="btn btn-md" href="./events.html" role="button">Our Events</a>
+      </p>
+      <img src="./img/homie.png" alt="Homie" />
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        Created by
+        <a href="https://kevicebryan.github.io/src/">KevinBryan</a> 🙉
+      </p>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBl6uLF_Sh7S7FbBiaj7jEbn5GWsbFzws4",
+        authDomain: "puddinglnt.firebaseapp.com",
+        databaseURL:
+          "https://puddinglnt-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "puddinglnt",
+        storageBucket: "puddinglnt.appspot.com",
+        messagingSenderId: "510990046997",
+        appId: "1:510990046997:web:2819f252cc9c6e81423b1c",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+  </body>
+</html>
