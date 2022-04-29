@@ -9,6 +9,18 @@ const firebaseConfig = {
   appId: "1:510990046997:web:2819f252cc9c6e81423b1c",
 };
 
+const inputForm = document.querySelector(".form");
+const inputName = document.querySelector(".form-control--name");
+const inputEmail = document.querySelector(".form-control--email");
+const inputPhone = document.querySelector(".form-control--phone");
+const inputEvent = document.querySelector(".form-control--event");
+
+// init firebase
+firebase.initializeApp(firebaseConfig);
+
+// reference for database
+const contactFormDB = firebase.database().ref("contactForm");
+
 // Slider
 const slider = function () {
   const slides = document.querySelectorAll(".slide");
@@ -94,12 +106,7 @@ const slider = function () {
 };
 slider();
 
-const inputForm = document.querySelector(".form");
-const inputName = document.querySelector(".form-control--name");
-const inputEmail = document.querySelector(".form-control--email");
-const inputPhone = document.querySelector(".form-control--phone");
-const inputEvent = document.querySelector(".form-control--event");
-
+// local app storage
 class App {
   #datas = [];
 
@@ -136,6 +143,15 @@ class App {
     customerData = new CustomerData(name, email, phoneNumber, event);
     this.#datas.push(customerData);
     this._setLocalStorage();
+
+    // push to FireBase
+    var newContactForm = contactFormDB.push();
+    newContactForm.set({
+      name: name,
+      email: email,
+      phone: phoneNumber,
+      event: event,
+    });
   }
   _setLocalStorage() {
     localStorage.setItem("datas", JSON.stringify(this.#datas));
